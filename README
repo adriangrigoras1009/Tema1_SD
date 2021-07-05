@@ -1,0 +1,54 @@
+In file.h am uitilizat 2 structuri si am pus pointerii specifici in Directory
+create_fs 
+- initializez lista si aloc memorie
+delete_fs2 
+- elibereaza memoria directorului radacina
+delete_fs 
+- ma duc la inceputul listei(in dir radacina)
+- sterg toate fisierele iar apoi intru recursiv in directoare
+- continui stergerea in fiecare director pana ajunge se termina dir
+touch 
+- daca lista de fis e nula, ii aloc memorie pt head
+- daca introduc un elem mai mic dpdv lexicografic il pun head
+- altfel urmaresc sa il pun in ordinea lexicografica
+mkdir 
+- daca lista de dir e nula, ii aloc memorie pt head
+- daca introduc un elem mai mic dpdv lexicografic il pun head
+- altfel urmaresc sa il pun in ordinea lexicografica
+cd 
+- conditie daca e in root sa nu se intoarca la ".."
+- altfel se duce in directorul parinte
+- daca lista de dir e nula ins ca nu exista fisieru
+- daca primul dir este cel in care vrem sa intram schimbam directorul
+- daca nu e, cautam in lista pana il gasim si schimbam directorul
+- daca nu exista directorul, se afiseaza mesajul corespunzator
+ls 
+- parcurg lista de fisiere si afisez numele fiecaruia
+- parcurg lista de dir si afisez numele fiecaruia
+pwd 
+- am facut-o recursiv folosindu-ma de parentDir
+tree 
+- am luat un contor pentru a contoriza in cate directoare am intrat
+- afisez prima oara toate fisierele din dir de unde dau comanda
+- apoi daca directoarele nu sunt goale pun numele lor, cresc contorul
+- parcurg fiecare director recursiv si ii afisez toate fisierele si dir
+- daca directoarele sunt goale doar se afiseaza
+rm 
+- introduc numele fisierului
+- il caut in directorul in care sunt si daca exista schimb pointerii
+- dupa ce pointerul fisierului anterior nu mai pointeaza spre elemen si
+- el nu pointeaza spre nimic eliberez memoria
+rmdir 
+- daca directorul are elemente in listele lui se duce in functia recursive
+- pentru fiecare director cu elemente am creat o functie recursiva
+- mai intai sterge toate fisierele si elibereaza memoriile(rm_for_rmdir)
+- apoi directoarele care au la randul lor elemente sunt vizitate
+- daca un director nu mai are elemente este sters(rm_directoare)
+- cat timp lista initiala e diferita de NULL va umbla in toate directoarele
+- apoi pentru a elimina si directorul am facut functia rm_ultimuldir
+find
+- daca adancimea e 0 atunci doar parcurge lista de fisiere a dir curent
+- altfel intr-o maniera recursiva parcurge fisierele(si verifica daca gaseste)
+- apoi daca directoarele sunt goale, trece la urmatorul director
+- daca mai au elemente cautam recursiv in ele
+- am luat un contor(static) pentru a contoriza adancimea parcursa

@@ -1,0 +1,6 @@
+build: fs.c file.h
+	gcc -o fsminishell fs.c file.h -std=c89
+run: fs
+	./fsminishell
+clean:
+	rm fsminishell
